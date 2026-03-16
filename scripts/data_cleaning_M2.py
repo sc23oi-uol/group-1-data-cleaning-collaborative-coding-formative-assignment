@@ -51,3 +51,7 @@ def clean_data(data_text_list):
         writer.writerows(cleaned_rows)
     cleaned_text_lines=[",".join(row)+"\n" for row in cleaned_rows]
     return cleaned_text_lines
+if __name__=="__main__":
+    url =" https://earthquake.usgs.gov/fdsnws/event/1/query?format=csv&starttime=2023-01-01&endtime=2023-01-02"
+    result=import_data(url)
+    cleaned=clean_data(result)
